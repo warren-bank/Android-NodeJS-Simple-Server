@@ -36,12 +36,16 @@ public class MainActivity extends Activity {
             new Thread(new Runnable() {
                 @Override
                 public void run() {
-                    startNodeWithArguments(new String[]{"node", "-e",
-                            "var http = require('http'); " +
-                                    "var versions_server = http.createServer( (request, response) => { " +
-                                    "  response.end('Versions: ' + JSON.stringify(process.versions, null, 2)); " +
-                                    "}); " +
-                                    "versions_server.listen(3000);"
+                    startNodeWithArguments(new String[]{"node", "-e", ""
+                      + "var http = require('http');"
+                      + "var CRLF = '\\r\\n';"
+                      + "var http_server = http.createServer((request, response) => {"
+                      + "  response.end("
+                      + "    'versions = ' + JSON.stringify(process.versions, null, 2) + CRLF + CRLF +"
+                      + "    'env vars = ' + JSON.stringify(process.env,      null, 2)"
+                      + "  );"
+                      + "});"
+                      + "http_server.listen(3000);"
                     });
                 }
             }).start();

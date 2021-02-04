@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">Node.js Simple Server</string>
 
-    <string name="welcome_message">Node.js Simple Server\n\nListening on port: 3000\n\nResponse contains: `process.versions`\n\nsee:\nhttps://nodejs.org/api/process.html#process_process_versions</string>
+    <string name="welcome_message">Node.js Simple Server\n\nListening on port: 3000\n\nResponse contains:\n  `process.versions`\n  `process.env`\n\nsee:\n  https://nodejs.org/api/process.html</string>
 </resources>
